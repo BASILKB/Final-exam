@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order Success</title>
+  <link rel="stylesheet" href="/public/styles.css">
+</head>
+<body>
+  <header>
+    <h1>Order Juices</h1>
+    <nav>
+      <a href="/">Order Juices</a>
+      <a href="/view-orders">View Orders</a>
+    </nav>
+  </header>
+  <main>
+    <h2>Thank you for your order!</h2>
+    <p>Here are your order details:</p>
+    <p>Name: <%= order.name %></p>
+    <p>Phone: <%= order.phone %></p>
+    <p>Total number of Lichi Juices: <%= order.lichiJuices %></p>
+    <p>Total number of Beet Juices: <%= order.beetJuices %></p>
+    <p>Total number of Peach Juices: <%= order.peachJuices %></p>
+    
+    <p>Sub Total: $<%= subTotal %></p>
+<p>Tax: $<%= tax %></p>
+<p>Total cost: $<%= totalCost %></p>
+
+  </main>
+  <footer>
+    <p>&copy; Basil kocheri biju</p>
+  </footer>
+</body>
+</html>

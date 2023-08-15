@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order Juices</title>
+  <link rel="stylesheet" href="/public/styles.css">
+</head>
+<body>
+  <header>
+    <h1>Booster Juice</h1>
+    <nav>
+      <a href="/">Order Juices</a>
+      <a href="/view-orders">View Orders</a>
+    </nav>
+  </header>
+  <main>
+    <h2>Order Juices</h2>
+    <form action="/place-order" method="post">
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" required>
+      <label for="phone">Phone</label>
+      <input type="text" id="phone" name="phone" pattern="[0-9]{10}" required>
+      <label for="lichiJuices">Lichi Juice ($3.99 each)</label>
+      <input type="number" id="lichiJuices" name="lichiJuices" min="0">
+      
+      <label for="beetJuices">Beet Juice ($2.99 each)</label>
+      <input type="number" id="beetJuices" name="beetJuices" min="0">
+      
+      <label for="peachJuices">Peach Juice ($3.49 each)</label>
+      <input type="number" id="peachJuices" name="peachJuices" min="0">
+      
+      <button type="submit">Submit</button>
+      
+      
+    </form>
+  </main>
+  <footer>
+    <p>&copy; Basil kocheri biju</p>
+  </footer>
+</body>
+</html>

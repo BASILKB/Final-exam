@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>View Orders</title>
+  <link rel="stylesheet" href="/public/styles.css">
+</head>
+<body>
+  <header>
+    <h1>Order Juices</h1>
+    <nav>
+      <a href="/">Order Juices</a>
+      <a href="/view-orders">View Orders</a>
+    </nav>
+  </header>
+  <main>
+    <h2>View Orders</h2>
+
+    <table>
+      <tr>
+        <th>Name</th>
+        <th>Phone</th>
+        <th>Lichi Juices</th>
+        <th>Beet Juices</th>
+        <th>Peach Juices</th>
+        <th>Sub Total</th>
+        <th>Tax</th>
+        <th>Total</th>
+      </tr>
+      <% orders.forEach(order => { %>
+        <tr>
+          <td><%= order.name %></td>
+          <td><%= order.phone %></td>
+          <td><%= order.lichiJuices %></td>
+          <td><%= order.beetJuices %></td>
+          <td><%= order.peachJuices %></td>
+          <td>$<%= (order.lichiJuices * 3.99 + order.beetJuices * 2.99 + order.peachJuices * 3.49).toFixed(2) %></td>
+          <td>$<%= ((order.lichiJuices * 3.99 + order.beetJuices * 2.99 + order.peachJuices * 3.49) * 0.14975).toFixed(2) %></td>
+          <td>$<%= ((order.lichiJuices * 3.99 + order.beetJuices * 2.99 + order.peachJuices * 3.49) + (order.lichiJuices * 3.99 + order.beetJuices * 2.99 + order.peachJuices * 3.49) * 0.14975).toFixed(2) %></td>
+        </tr>
+      <% }); %>
+      
+        
+        <!-- Total row -->
+        <tr>
+          <td colspan="5">Total:</td>
+          <td>$<%= totalSubTotal %></td>
+          <td>$<%= totalTax %></td>
+          <td>$<%= totalTotalCost %></td>
+        </tr>
+    </table>
+  </main>
+  <footer>
+    <p>&copy; Basil Kocheri Biju</p>
+  </footer>
+</body>
+</html>
