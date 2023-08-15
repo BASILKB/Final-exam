@@ -39,7 +39,7 @@ app.get('/', (req, res) => {
 app.post('/place-order', async (req, res) => {
   const formData = req.body;
 
-  // Calculate the total cost of juices
+  // Calculating the total cost of juices
   const lichiPrice = 3.99;
   const beetPrice = 2.99;
   const peachPrice = 3.49;
@@ -50,7 +50,7 @@ app.post('/place-order', async (req, res) => {
   const taxRate = 0.14975;
   const tax = subTotal * taxRate;
 
-  // Calculate Total Cost
+  //  Total Cost
   const totalCost = subTotal + tax;
 
   const order = new Order({
